@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Applink Hello API
+  description: >-
+    This API provides a simple call and response conversation. If you pass a
+    name to the POST endpoint called hello, a personalized greeting will be
+    returned in the response.
+paths:
+  /hello:
+    post:
+      description: >-
+        Given a name in the POST request body, a customized greeting will be
+        returned in the response body.
+      operationId: postHello
+      requestBody:
+        description: The request body, which will include a name.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/hellorequestbody'
+      responses:
+        '200':
+          description: >-
+            The request was successful. A response containing a friendly
+            greeting will be returned.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/hellosuccessresponse'
+components:
+  schemas:
+    hellorequestbody:
+      description: This object represents the body for a POST request to the path /hello
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          description: >-
+            The name of the person you want this service to greet with its
+            response
+          example: Stan
+          type: string
+    hellosuccessresponse:
+      description: >-
+        This object represents the success response from a POST request to path
+        /hello
+      type: object
+      required:
+        - greeting
+      properties:
+        greeting:
+          description: >-
+            The greeting phrase to be returned to the person who initiated the
+            conversation
+          example: Hello there, Stan
+          type: string
