@@ -3,10 +3,10 @@
 Plain Express app to respond to simple POST from AppLink<br/>
 <br/>
 
-Assumes you have a throw-away Salesforce org that is enabled for Heroku Applink.<br/>
+Assumes you have a Salesforce org that is enabled for Heroku Applink that you can try sample code in.<br/>
 <br/>
 
-The only changes to make this work with [AppLink Service Mesh](https://github.com/heroku/heroku-buildpack-heroku-applink-service-mesh) are:
+The key features to make this work with [AppLink Service Mesh](https://github.com/heroku/heroku-buildpack-heroku-applink-service-mesh) are:
 * add the service mesh buildpack
 * add Heroku config var APP_PORT
 * adjust the Procfile to launch service mesh
@@ -84,3 +84,5 @@ Delete the Heroku app in the web dashboard or use this command:
 ```
 heroku destroy
 ```
+
+Delete the External Service "HelloAPI" from your Salesforce Org as explained in [these instructions](https://devcenter.heroku.com/articles/getting-started-heroku-applink#delete-your-connections-published-apps-and-add-on).
