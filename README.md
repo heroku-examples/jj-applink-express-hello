@@ -23,7 +23,7 @@ The key features to make this work with [AppLink Service Mesh](https://github.co
 ## Setup
 
 ```
-heroku create jj-applink-express-hello
+heroku create
 ```
 
 ```
